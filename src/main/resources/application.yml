@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: objectrenderer
+  elasticsearch:
+    uris: https://elasticsearch-elastic-cloud.es.us-central1.gcp.cloud.es.io
+    username:  elastic
+    password: kATaBFDD3UUqA4sXMSLLfXFs
+  datasource:
+    url: jdbc:postgresql://ep-orange-grass-a5935gaz.us-east-2.aws.neon.tech/model?user=model_owner&password=euALQ6E5fIXK&sslmode=require
+  jpa:
+    hibernate:
+      ddl-auto: update
+#  data:
+#    elasticsearch:
+#      cluster-names: docker-cluster
+#      cluster-node: localhost:9200
+
