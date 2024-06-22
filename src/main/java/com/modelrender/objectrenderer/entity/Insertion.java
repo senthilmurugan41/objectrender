@@ -1,18 +1,16 @@
 package com.modelrender.objectrenderer.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name="course")
+@Table(name="insertion")
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Course {
-
+public class Insertion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -22,7 +20,6 @@ public class Course {
     @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     @JoinColumn(name="dataset_id")
     private DataSet dataSet;
-
 
     public int getId() {
         return id;

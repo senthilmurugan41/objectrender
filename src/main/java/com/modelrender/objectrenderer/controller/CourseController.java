@@ -26,5 +26,22 @@ public class CourseController {
         return courseService.findAllCourse();
     }
 
+    @GetMapping("/getByName/{name}")
+    public Course getCourseByName(@PathVariable String name)
+    {
+        return courseService.findCourseByName(name);
+    }
+
+    @PutMapping("/updateByName/{oldName}/{newName}")
+    public Course updateCourseByName(@PathVariable String oldName, @PathVariable String newName)
+    {
+        return courseService.updateCourseName(oldName, newName);
+    }
+
+    @DeleteMapping("/deleteByName/{name}")
+    public void deleteCourseByName(@PathVariable String name)
+    {
+        courseService.deleteCourseByName(name);
+    }
 
 }

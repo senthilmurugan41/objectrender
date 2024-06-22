@@ -23,4 +23,21 @@ public class CourseServiceImpl implements CourseService {
     {
         return courseRepo.findAll();
     }
+
+    @Override
+    public Course findCourseByName(String name) {
+        return courseRepo.findByName(name);
+    }
+
+    @Override
+    public Course updateCourseName(String oldName, String newName) {
+       Course course = courseRepo.findByName(oldName);
+       course.setName(newName);
+       return courseRepo.save(course);
+    }
+
+    @Override
+    public void deleteCourseByName(String name) {
+        courseRepo.delete(courseRepo.findByName(name));
+    }
 }

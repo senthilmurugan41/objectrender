@@ -1,17 +1,16 @@
 package com.modelrender.objectrenderer.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name="course")
+@Table(name="origin")
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
-public class Course {
+@NoArgsConstructor
+public class Origin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +22,13 @@ public class Course {
     @JoinColumn(name="dataset_id")
     private DataSet dataSet;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getId() {
         return id;
@@ -30,14 +36,6 @@ public class Course {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @JsonBackReference
